@@ -14,7 +14,7 @@
     <defName>AmmoSet_Webber</defName>
     <label>Webber charge</label>
     <ammoTypes>
-      <Ammo_LasGun>Bullet_LasGun</Ammo_LasGun>
+      <Ammo_Webber>Bullet_Webber</Ammo_Webber>
     </ammoTypes>
   </CombatExtended.AmmoSetDef>
 	
@@ -62,7 +62,7 @@
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseWebber">
+  <ThingDef ParentName="BaseBullet">
     <defName>Bullet_Webber</defName>
     <label>Webber net</label>
     <projectile>
