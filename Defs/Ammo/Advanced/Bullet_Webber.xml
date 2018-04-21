@@ -2,8 +2,8 @@
 <Defs>
 
     <ThingCategoryDef>
-      <defName>AmmoLasPistol</defName>
-      <label>Laser Pistol charge</label>
+      <defName>AmmoWebber</defName>
+      <label>Webber charge</label>
       <parent>AmmoAdvanced</parent>
       <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
     </ThingCategoryDef>
@@ -11,17 +11,17 @@
 	<!-- ==================== AmmoSet ========================== -->
 
   <CombatExtended.AmmoSetDef>
-    <defName>AmmoSet_LasPistol</defName>
-    <label>Laser Pistol charge</label>
+    <defName>AmmoSet_Webber</defName>
+    <label>Webber charge</label>
     <ammoTypes>
-      <Ammo_LasPistol>Bullet_LasPistol</Ammo_LasPistol>
+      <Ammo_LasGun>Bullet_LasGun</Ammo_LasGun>
     </ammoTypes>
   </CombatExtended.AmmoSetDef>
 	
 	<!-- ==================== Ammo ========================== -->
 
-  <ThingDef Name="LasPistolBase" ParentName="AmmoBase" Abstract="True">
-    <description>Laser Pistol ammo</description>
+  <ThingDef Name="WebberBase" ParentName="AmmoBase" Abstract="True">
+    <description>Webber ammo</description>
     <statBases>
 	  <Mass>0.01</Mass>
 	  <Bulk>0.02</Bulk>
@@ -31,13 +31,13 @@
       <li>CE_AutoEnableCrafting</li>
     </tradeTags>
     <thingCategories>
-      <li>AmmoLasPistol</li>
+      <li>AmmoWebber</li>
     </thingCategories>
   </ThingDef>
 
-  <ThingDef ParentName="LasPistolBase">
-    <defName>Ammo_LasPistol</defName>
-    <label>Laser Pistol cartridge</label>
+  <ThingDef ParentName="WebberBase">
+    <defName>Ammo_Webber</defName>
+    <label>Webber cartridge</label>
     <graphicData>
       <texPath>Things/Ammo/Charged/Regular</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -50,31 +50,35 @@
 	
 	<!-- ================== Projectiles ================== -->
 
-  <ThingDef Name="BaseLasPistol" ParentName="BaseBullet" Abstract="true">
+  <ThingDef Name="WebberGun" ParentName="BaseBullet" Abstract="true">
     <graphicData>
-      <texPath>Things/IGCore/Projectile/QXIGLasShotShort</texPath>
+      <texPath>Things/IGCore/Projectile/WebProjectile</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>TransparentPostLight</shaderType>
     </graphicData>
     <projectile>
-      <damageDef>IGBullet</damageDef>
-      <speed>100</speed>
+      <damageDef>IGWebbed</damageDef>
+      <speed>50</speed>
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseLasPistol">
-    <defName>Bullet_LasPistol</defName>
-    <label>Laser shot</label>
+  <ThingDef ParentName="BaseWebber">
+    <defName>Bullet_Webber</defName>
+    <label>Webber net</label>
     <projectile>
-      <damageAmountBase>7</damageAmountBase>
-      <armorPenetration>0.25</armorPenetration>
+      <damageAmountBase>10</damageAmountBase>
+	  <explosionRadius>0.01</explosionRadius>
+	  <flyOverhead>true</flyOverhead>
+	  <soundExplode>IGElectricShock</soundExplode>
+      <armorPenetration>0.45</armorPenetration>
     </projectile>
   </ThingDef>
 	
   <RecipeDef ParentName="AmmoRecipeBase">
-    <defName>MakeAmmo_LasPistol</defName>
-    <label>make Laser Pistol cartridge x180</label>
-    <description>Craft 180 Laser Pistol cartridges.</description>
-    <jobString>Making Laser Pistol cartridges.</jobString>
+    <defName>MakeAmmo_Webber</defName>
+    <label>make Webber cartridge x100</label>
+    <description>Craft 100 Webber cartridges.</description>
+    <jobString>Making Webber cartridges.</jobString>
     <ingredients>
       <li>
         <filter>
@@ -100,9 +104,9 @@
       </thingDefs>
     </fixedIngredientFilter>
     <products>
-      <Ammo_LasPistol>180</Ammo_LasPistol>
+      <Ammo_Webber>100</Ammo_Webber>
     </products>
-	<researchPrerequisite>WRLasPistol</researchPrerequisite>
+	<researchPrerequisite>WRWebber</researchPrerequisite>
   </RecipeDef>
 	
 </Defs>

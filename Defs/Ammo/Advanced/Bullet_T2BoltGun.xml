@@ -2,8 +2,8 @@
 <Defs>
 
     <ThingCategoryDef>
-      <defName>AmmoLasPistol</defName>
-      <label>Laser Pistol charge</label>
+      <defName>AmmoT2BoltGun</defName>
+      <label>BoltGun ammo</label>
       <parent>AmmoAdvanced</parent>
       <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
     </ThingCategoryDef>
@@ -11,17 +11,17 @@
 	<!-- ==================== AmmoSet ========================== -->
 
   <CombatExtended.AmmoSetDef>
-    <defName>AmmoSet_LasPistol</defName>
-    <label>Laser Pistol charge</label>
+    <defName>AmmoSet_T2BoltGun</defName>
+    <label>T2BoltGun ammo</label>
     <ammoTypes>
-      <Ammo_LasPistol>Bullet_LasPistol</Ammo_LasPistol>
+      <Ammo_T2BoltGun>Bullet_T2BoltGun</Ammo_T2BoltGun>
     </ammoTypes>
   </CombatExtended.AmmoSetDef>
 	
 	<!-- ==================== Ammo ========================== -->
 
-  <ThingDef Name="LasPistolBase" ParentName="AmmoBase" Abstract="True">
-    <description>Laser Pistol ammo</description>
+  <ThingDef Name="T2BoltGunBase" ParentName="AmmoBase" Abstract="True">
+    <description>T2BoltGun ammo</description>
     <statBases>
 	  <Mass>0.01</Mass>
 	  <Bulk>0.02</Bulk>
@@ -31,50 +31,52 @@
       <li>CE_AutoEnableCrafting</li>
     </tradeTags>
     <thingCategories>
-      <li>AmmoLasPistol</li>
+      <li>AmmoT2BoltGun</li>
     </thingCategories>
   </ThingDef>
 
-  <ThingDef ParentName="LasPistolBase">
-    <defName>Ammo_LasPistol</defName>
-    <label>Laser Pistol cartridge</label>
+  <ThingDef ParentName="T2BoltGunBase">
+    <defName>Ammo_T2BoltGun</defName>
+    <label>T2BoltGun cartridge</label>
     <graphicData>
-      <texPath>Things/Ammo/Charged/Regular</texPath>
+      <texPath>Things/Ammo/HighCaliber/HE</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <statBases>
       <MarketValue>0.95</MarketValue>
     </statBases>
-    <ammoClass>Charged</ammoClass>
+    <ammoClass>FullMetalJacket</ammoClass>
   </ThingDef>
 	
 	<!-- ================== Projectiles ================== -->
 
-  <ThingDef Name="BaseLasPistol" ParentName="BaseBullet" Abstract="true">
+  <ThingDef Name="BaseT2BoltGun" ParentName="BaseBullet" Abstract="true">
     <graphicData>
-      <texPath>Things/IGCore/Projectile/QXIGLasShotShort</texPath>
+      <texPath>Things/IGCore/Projectile/BoltProjectileMk2-MED</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
-      <damageDef>IGBullet</damageDef>
+      <damageDef>IGBomb</damageDef>
       <speed>100</speed>
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseLasPistol">
-    <defName>Bullet_LasPistol</defName>
-    <label>Laser shot</label>
+  <ThingDef ParentName="BaseT2BoltGun">
+    <defName>Bullet_T2BoltGun</defName>
+    <label>T2BoltGun bullet</label>
     <projectile>
-      <damageAmountBase>7</damageAmountBase>
-      <armorPenetration>0.25</armorPenetration>
+      <damageAmountBase>35</damageAmountBase>
+      <armorPenetration>1.2</armorPenetration>
+	  <explosionRadius>1.5</explosionRadius>
+	  <soundExplode>IGSML_Explosion</soundExplode>
     </projectile>
   </ThingDef>
 	
   <RecipeDef ParentName="AmmoRecipeBase">
-    <defName>MakeAmmo_LasPistol</defName>
-    <label>make Laser Pistol cartridge x180</label>
-    <description>Craft 180 Laser Pistol cartridges.</description>
-    <jobString>Making Laser Pistol cartridges.</jobString>
+    <defName>MakeAmmo_T2BoltGun</defName>
+    <label>make T2BoltGun cartridge x90</label>
+    <description>Craft 90 T2BoltGun cartridges.</description>
+    <jobString>Making T2BoltGun cartridges.</jobString>
     <ingredients>
       <li>
         <filter>
@@ -82,7 +84,7 @@
             <li>Plasteel</li>
           </thingDefs>
         </filter>
-        <count>3</count>
+        <count>4</count>
       </li>
       <li>
         <filter>
@@ -90,7 +92,7 @@
             <li>Component</li>
           </thingDefs>
         </filter>
-        <count>3</count>
+        <count>4</count>
       </li>
     </ingredients>
     <fixedIngredientFilter>
@@ -100,9 +102,9 @@
       </thingDefs>
     </fixedIngredientFilter>
     <products>
-      <Ammo_LasPistol>180</Ammo_LasPistol>
+      <Ammo_T2BoltGun>90</Ammo_T2BoltGun>
     </products>
-	<researchPrerequisite>WRLasPistol</researchPrerequisite>
+	<researchPrerequisite>WRBoltGun</researchPrerequisite>
   </RecipeDef>
 	
 </Defs>

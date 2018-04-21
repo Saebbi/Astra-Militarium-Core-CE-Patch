@@ -2,8 +2,8 @@
 <Defs>
 
     <ThingCategoryDef>
-      <defName>AmmoLasPistol</defName>
-      <label>Laser Pistol charge</label>
+      <defName>AmmoBoltGun</defName>
+      <label>BoltGun charge</label>
       <parent>AmmoAdvanced</parent>
       <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
     </ThingCategoryDef>
@@ -11,17 +11,17 @@
 	<!-- ==================== AmmoSet ========================== -->
 
   <CombatExtended.AmmoSetDef>
-    <defName>AmmoSet_LasPistol</defName>
-    <label>Laser Pistol charge</label>
+    <defName>AmmoSet_BoltGun</defName>
+    <label>BoltGun charge</label>
     <ammoTypes>
-      <Ammo_LasPistol>Bullet_LasPistol</Ammo_LasPistol>
+      <Ammo_BoltGun>Bullet_BoltGun</Ammo_BoltGun>
     </ammoTypes>
   </CombatExtended.AmmoSetDef>
 	
 	<!-- ==================== Ammo ========================== -->
 
-  <ThingDef Name="LasPistolBase" ParentName="AmmoBase" Abstract="True">
-    <description>Laser Pistol ammo</description>
+  <ThingDef Name="BoltGunBase" ParentName="AmmoBase" Abstract="True">
+    <description>BoltGun ammo</description>
     <statBases>
 	  <Mass>0.01</Mass>
 	  <Bulk>0.02</Bulk>
@@ -31,50 +31,52 @@
       <li>CE_AutoEnableCrafting</li>
     </tradeTags>
     <thingCategories>
-      <li>AmmoLasPistol</li>
+      <li>AmmoBoltGun</li>
     </thingCategories>
   </ThingDef>
 
-  <ThingDef ParentName="LasPistolBase">
-    <defName>Ammo_LasPistol</defName>
-    <label>Laser Pistol cartridge</label>
+  <ThingDef ParentName="BoltGunBase">
+    <defName>Ammo_BoltGun</defName>
+    <label>BoltGun cartridge</label>
     <graphicData>
-      <texPath>Things/Ammo/Charged/Regular</texPath>
+      <texPath>Things/Ammo/HighCaliber/HE</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <statBases>
       <MarketValue>0.95</MarketValue>
     </statBases>
-    <ammoClass>Charged</ammoClass>
+    <ammoClass>FullMetalJacket</ammoClass>
   </ThingDef>
 	
 	<!-- ================== Projectiles ================== -->
 
-  <ThingDef Name="BaseLasPistol" ParentName="BaseBullet" Abstract="true">
+  <ThingDef Name="BaseBoltGun" ParentName="BaseBullet" Abstract="true">
     <graphicData>
-      <texPath>Things/IGCore/Projectile/QXIGLasShotShort</texPath>
+      <texPath>Things/IGCore/Projectile/BoltProjectileMk1-MED</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
-      <damageDef>IGBullet</damageDef>
+      <damageDef>IGBomb</damageDef>
       <speed>100</speed>
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseLasPistol">
-    <defName>Bullet_LasPistol</defName>
-    <label>Laser shot</label>
+  <ThingDef ParentName="BaseBoltGun">
+    <defName>Bullet_BoltGun</defName>
+    <label>BoltGun bullet</label>
     <projectile>
-      <damageAmountBase>7</damageAmountBase>
-      <armorPenetration>0.25</armorPenetration>
+      <damageAmountBase>30</damageAmountBase>
+      <armorPenetration>0.75</armorPenetration>
+	  <explosionRadius>1.01</explosionRadius>
+	  <soundExplode>IGSML_Explosion</soundExplode>
     </projectile>
   </ThingDef>
 	
   <RecipeDef ParentName="AmmoRecipeBase">
-    <defName>MakeAmmo_LasPistol</defName>
-    <label>make Laser Pistol cartridge x180</label>
-    <description>Craft 180 Laser Pistol cartridges.</description>
-    <jobString>Making Laser Pistol cartridges.</jobString>
+    <defName>MakeAmmo_BoltGun</defName>
+    <label>make BoltGun cartridge x90</label>
+    <description>Craft 90 BoltGun cartridges.</description>
+    <jobString>Making BoltGun cartridges.</jobString>
     <ingredients>
       <li>
         <filter>
@@ -100,9 +102,9 @@
       </thingDefs>
     </fixedIngredientFilter>
     <products>
-      <Ammo_LasPistol>180</Ammo_LasPistol>
+      <Ammo_BoltGun>90</Ammo_BoltGun>
     </products>
-	<researchPrerequisite>WRLasPistol</researchPrerequisite>
+	<researchPrerequisite>WRBoltGun</researchPrerequisite>
   </RecipeDef>
 	
 </Defs>

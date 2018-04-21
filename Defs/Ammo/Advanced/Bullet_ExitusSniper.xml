@@ -2,8 +2,8 @@
 <Defs>
 
     <ThingCategoryDef>
-      <defName>AmmoLasPistol</defName>
-      <label>Laser Pistol charge</label>
+      <defName>AmmoExitusSniper</defName>
+      <label>Exitus Sniper ammo</label>
       <parent>AmmoAdvanced</parent>
       <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
     </ThingCategoryDef>
@@ -11,17 +11,17 @@
 	<!-- ==================== AmmoSet ========================== -->
 
   <CombatExtended.AmmoSetDef>
-    <defName>AmmoSet_LasPistol</defName>
-    <label>Laser Pistol charge</label>
+    <defName>AmmoSet_ExitusSniper</defName>
+    <label>Exitus Sniper ammo</label>
     <ammoTypes>
-      <Ammo_LasPistol>Bullet_LasPistol</Ammo_LasPistol>
+      <Ammo_ExitusSniper>Bullet_ExitusSniper</Ammo_ExitusSniper>
     </ammoTypes>
   </CombatExtended.AmmoSetDef>
 	
 	<!-- ==================== Ammo ========================== -->
 
-  <ThingDef Name="LasPistolBase" ParentName="AmmoBase" Abstract="True">
-    <description>Laser Pistol ammo</description>
+  <ThingDef Name="ExitusSniperBase" ParentName="AmmoBase" Abstract="True">
+    <description>ExitusSniper ammo</description>
     <statBases>
 	  <Mass>0.01</Mass>
 	  <Bulk>0.02</Bulk>
@@ -31,50 +31,50 @@
       <li>CE_AutoEnableCrafting</li>
     </tradeTags>
     <thingCategories>
-      <li>AmmoLasPistol</li>
+      <li>AmmoExitusSniper</li>
     </thingCategories>
   </ThingDef>
 
-  <ThingDef ParentName="LasPistolBase">
-    <defName>Ammo_LasPistol</defName>
-    <label>Laser Pistol cartridge</label>
+  <ThingDef ParentName="ExitusSniperBase">
+    <defName>Ammo_ExitusSniper</defName>
+    <label>Exitus Sniper cartridge</label>
     <graphicData>
-      <texPath>Things/Ammo/Charged/Regular</texPath>
+      <texPath>Things/Ammo/HighCaliber/HE</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <statBases>
       <MarketValue>0.95</MarketValue>
     </statBases>
-    <ammoClass>Charged</ammoClass>
+    <ammoClass>FullMetalJacket</ammoClass>
   </ThingDef>
 	
 	<!-- ================== Projectiles ================== -->
 
-  <ThingDef Name="BaseLasPistol" ParentName="BaseBullet" Abstract="true">
+  <ThingDef Name="BaseExitusSniper" ParentName="BaseBullet" Abstract="true">
     <graphicData>
-      <texPath>Things/IGCore/Projectile/QXIGLasShotShort</texPath>
+      <texPath>Things/IGCore/Projectile/QXIGBoltShotSml</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
       <damageDef>IGBullet</damageDef>
-      <speed>100</speed>
+      <speed>200</speed>
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseLasPistol">
-    <defName>Bullet_LasPistol</defName>
-    <label>Laser shot</label>
+  <ThingDef ParentName="BaseExitusSniper">
+    <defName>Bullet_ExitusSniper</defName>
+    <label>Exitus Sniper bullet</label>
     <projectile>
-      <damageAmountBase>7</damageAmountBase>
-      <armorPenetration>0.25</armorPenetration>
+      <damageAmountBase>90</damageAmountBase>
+      <armorPenetration>3.0</armorPenetration>
     </projectile>
   </ThingDef>
 	
   <RecipeDef ParentName="AmmoRecipeBase">
-    <defName>MakeAmmo_LasPistol</defName>
-    <label>make Laser Pistol cartridge x180</label>
-    <description>Craft 180 Laser Pistol cartridges.</description>
-    <jobString>Making Laser Pistol cartridges.</jobString>
+    <defName>MakeAmmo_ExitusSniper</defName>
+    <label>make Exitus Sniper cartridge x60</label>
+    <description>Craft 60 Exitus Sniper cartridges.</description>
+    <jobString>Making Exitus Sniper cartridges.</jobString>
     <ingredients>
       <li>
         <filter>
@@ -100,9 +100,9 @@
       </thingDefs>
     </fixedIngredientFilter>
     <products>
-      <Ammo_LasPistol>180</Ammo_LasPistol>
+      <Ammo_ExitusSniper>60</Ammo_ExitusSniper>
     </products>
-	<researchPrerequisite>WRLasPistol</researchPrerequisite>
+	<researchPrerequisite>WRExitusSniper</researchPrerequisite>
   </RecipeDef>
 	
 </Defs>
