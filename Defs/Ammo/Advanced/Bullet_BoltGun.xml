@@ -55,6 +55,7 @@
 			<texPath>Things/IGCore/Projectile/BoltProjectileMk1-MED</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
+		<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
 		<projectile>
 			<damageDef>IGBomb</damageDef>
 			<speed>100</speed>
