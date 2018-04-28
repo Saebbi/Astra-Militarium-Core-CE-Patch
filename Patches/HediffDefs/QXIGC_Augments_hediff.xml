@@ -23,6 +23,23 @@
 					</tools>
 				</value>
 			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>*/HediffDef[defName="IG_HediffDef_Aug_ARM"]/comps/li[@Class="HediffCompProperties_VerbGiver"]/tools</xpath>
+				<value>
+					<tools>
+						<li Class="CombatExtended.ToolCE">
+							<label>Augmetic Fist</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>35</power>
+							<cooldownTime>1.1</cooldownTime>
+							<armorPenetration>0.7</armorPenetration>
+						</li>
+					</tools>
+				</value>
+			</li>
 		</operations>
 	</Operation>
 </Patch>

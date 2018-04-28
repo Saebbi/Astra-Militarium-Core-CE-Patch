@@ -50,23 +50,29 @@
 	
 	<!-- ================== Projectiles ================== -->
 
-<ThingDef ParentName="BaseBullet">
-		<defName>Bullet_Webber</defName>
-		<label>Webber Net</label>
-		<graphicData>
-			<texPath>Things/IGCore/Projectile/WebProjectile</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<shaderType>TransparentPostLight</shaderType>
-		</graphicData>
-		
-		<projectile>
-			<damageDef>IGWebbed</damageDef>
-			<damageAmountBase>10</damageAmountBase>
-			<armorPenetration>0.45</armorPenetration>
-			<speed>50</speed>
-			<soundExplode>IGElectricShock</soundExplode>
-		</projectile>
-	</ThingDef>
+  <ThingDef Name="WebberGun" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/IGCore/Projectile/WebProjectile</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <projectile>
+      <damageDef>IGWebbed</damageDef>
+      <speed>50</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_Webber</defName>
+    <label>Webber net</label>
+    <projectile>
+      <damageAmountBase>10</damageAmountBase>
+	  <explosionRadius>0.01</explosionRadius>
+	  <flyOverhead>true</flyOverhead>
+	  <soundExplode>IGElectricShock</soundExplode>
+      <armorPenetration>0.45</armorPenetration>
+    </projectile>
+  </ThingDef>
 	
   <RecipeDef ParentName="AmmoRecipeBase">
     <defName>MakeAmmo_Webber</defName>

@@ -55,7 +55,6 @@
       <texPath>Things/IGCore/Projectile/BoltProjectileMk2-MED</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-	<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
     <projectile>
       <damageDef>IGBomb</damageDef>
       <speed>100</speed>
@@ -65,6 +64,7 @@
   <ThingDef ParentName="BaseT2BoltGun">
     <defName>Bullet_T2BoltGun</defName>
     <label>T2BoltGun bullet</label>
+	<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
     <projectile>
       <damageAmountBase>35</damageAmountBase>
       <armorPenetration>1.2</armorPenetration>

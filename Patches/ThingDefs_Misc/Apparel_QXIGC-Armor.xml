@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName="IG_ARM_PwrAstarte"]/statBases</xpath>
+		<value>
+			<statBases>
+				<MarketValue>5000</MarketValue>
+				<MaxHitPoints>1500</MaxHitPoints>
+				<WorkToMake>100000</WorkToMake>
+				<ArmorRating_Blunt>1.00</ArmorRating_Blunt>
+				<ArmorRating_Sharp>1.00</ArmorRating_Sharp>
+				<ArmorRating_Electric>1.00</ArmorRating_Electric>
+				<ArmorRating_Heat>1.00</ArmorRating_Heat>
+				<Insulation_Heat>20</Insulation_Heat>
+				<Insulation_Cold>-30</Insulation_Cold>
+			</statBases>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName="IG_ARM_PwrAstarte"]/apparel/bodyPartGroups</xpath>
+		<value>
+			<bodyPartGroups>
+				<li>Torso</li>
+				<li>Neck</li>
+				<li>Shoulders</li>
+				<li>Arms</li>
+				<li>Legs</li>
+				<li>Waist</li>
+			</bodyPartGroups>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName="IG_HELM_PwrAstarte"]/statBases</xpath>
+		<value>
+			<statBases>
+				<MarketValue>3500</MarketValue>
+				<MaxHitPoints>500</MaxHitPoints>
+				<WorkToMake>60000</WorkToMake>
+				<ArmorRating_Blunt>0.80</ArmorRating_Blunt>
+				<ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+				<ArmorRating_Electric>0.80</ArmorRating_Electric>
+				<ArmorRating_Heat>0.80</ArmorRating_Heat>
+				<Insulation_Heat>5</Insulation_Heat>
+				<Insulation_Cold>-10</Insulation_Cold>
+			</statBases>
+		</value>
+	</Operation>
+	
+</Patch>
+
