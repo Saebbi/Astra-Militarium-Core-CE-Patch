@@ -20,7 +20,7 @@
 	
 	<!-- ==================== Ammo ========================== -->
 
-  <ThingDef Name="ExitusSniperBase" ParentName="AmmoBase" Abstract="True">
+  <ThingDef Class="CombatExtended.AmmoDef" Name="ExitusSniperBase" ParentName="AmmoBase" Abstract="True">
     <description>ExitusSniper ammo</description>
     <statBases>
 	  <Mass>0.01</Mass>
@@ -35,7 +35,7 @@
     </thingCategories>
   </ThingDef>
 
-  <ThingDef ParentName="ExitusSniperBase">
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="ExitusSniperBase">
     <defName>Ammo_ExitusSniper</defName>
     <label>Exitus Sniper cartridge</label>
     <graphicData>
@@ -50,7 +50,7 @@
 	
 	<!-- ================== Projectiles ================== -->
 
-  <ThingDef Name="BaseExitusSniper" ParentName="BaseBullet" Abstract="true">
+  <ThingDef Class="CombatExtended.AmmoDef" Name="BaseExitusSniper" ParentName="BaseBullet" Abstract="true">
     <graphicData>
       <texPath>Things/IGCore/Projectile/QXIGBoltShotSml</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -61,10 +61,10 @@
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseExitusSniper">
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="BaseExitusSniper">
     <defName>Bullet_ExitusSniper</defName>
     <label>Exitus Sniper bullet</label>
-    <projectile>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageAmountBase>90</damageAmountBase>
       <armorPenetration>3.0</armorPenetration>
     </projectile>

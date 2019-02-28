@@ -20,7 +20,7 @@
 	
 	<!-- ==================== Ammo ========================== -->
 
-  <ThingDef Name="T2BoltGunBase" ParentName="AmmoBase" Abstract="True">
+  <ThingDef Class="CombatExtended.AmmoDef" Name="T2BoltGunBase" ParentName="AmmoBase" Abstract="True">
     <description>T2BoltGun ammo</description>
     <statBases>
 	  <Mass>0.01</Mass>
@@ -35,7 +35,7 @@
     </thingCategories>
   </ThingDef>
 
-  <ThingDef ParentName="T2BoltGunBase">
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="T2BoltGunBase">
     <defName>Ammo_T2BoltGun</defName>
     <label>T2BoltGun cartridge</label>
     <graphicData>
@@ -50,22 +50,22 @@
 	
 	<!-- ================== Projectiles ================== -->
 
-  <ThingDef Name="BaseT2BoltGun" ParentName="BaseBullet" Abstract="true">
+  <ThingDef Class="CombatExtended.AmmoDef" Name="BaseT2BoltGun" ParentName="BaseBullet" Abstract="true">
     <graphicData>
       <texPath>Things/IGCore/Projectile/BoltProjectileMk2-MED</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <projectile>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageDef>IGBomb</damageDef>
       <speed>100</speed>
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseT2BoltGun">
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="BaseT2BoltGun">
     <defName>Bullet_T2BoltGun</defName>
     <label>T2BoltGun bullet</label>
 	<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
-    <projectile>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageAmountBase>35</damageAmountBase>
       <armorPenetration>1.2</armorPenetration>
 	  <explosionRadius>1.5</explosionRadius>

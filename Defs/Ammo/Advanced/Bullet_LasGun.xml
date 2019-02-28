@@ -20,7 +20,7 @@
 	
 	<!-- ==================== Ammo ========================== -->
 
-  <ThingDef Name="LasGunBase" ParentName="AmmoBase" Abstract="True">
+  <ThingDef Class="CombatExtended.AmmoDef" Name="LasGunBase" ParentName="AmmoBase" Abstract="True">
     <description>Laser Gun ammo</description>
     <statBases>
 	  <Mass>0.01</Mass>
@@ -35,7 +35,7 @@
     </thingCategories>
   </ThingDef>
 
-  <ThingDef ParentName="LasGunBase">
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="LasGunBase">
     <defName>Ammo_LasGun</defName>
     <label>Laser Gun cartridge</label>
     <graphicData>
@@ -50,21 +50,21 @@
 	
 	<!-- ================== Projectiles ================== -->
 
-  <ThingDef Name="BaseLasGun" ParentName="BaseBullet" Abstract="true">
+  <ThingDef Class="CombatExtended.AmmoDef" Name="BaseLasGun" ParentName="BaseBullet" Abstract="true">
     <graphicData>
       <texPath>Things/IGCore/Projectile/QXIGLasShotShort</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <projectile>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageDef>IGBullet</damageDef>
       <speed>135</speed>
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseLasGun">
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="BaseLasGun">
     <defName>Bullet_LasGun</defName>
     <label>Laser shot</label>
-    <projectile>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageAmountBase>9</damageAmountBase>
       <armorPenetration>0.35</armorPenetration>
     </projectile>

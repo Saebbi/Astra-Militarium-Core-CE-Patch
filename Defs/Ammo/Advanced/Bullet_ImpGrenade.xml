@@ -20,7 +20,7 @@
 	
 	<!-- ==================== Ammo ========================== -->
 
-  <ThingDef Name="ImpGrenadeBase" ParentName="AmmoBase" Abstract="True">
+  <ThingDef Class="CombatExtended.AmmoDef" Name="ImpGrenadeBase" ParentName="AmmoBase" Abstract="True">
     <description>Relatively small, low velocity grenade for use in grenade launchers.</description>
     <statBases>
 	  <Mass>0.2</Mass>
@@ -37,7 +37,7 @@
     <cookOffFlashScale>20</cookOffFlashScale>
   </ThingDef>
 
-  <ThingDef ParentName="ImpGrenadeBase">
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="ImpGrenadeBase">
     <defName>Ammo_ImpGrenade</defName>
     <label>Imperial grenade</label>
     <graphicData>
@@ -59,23 +59,23 @@
 	
 	<!-- ================== Projectiles ================== -->
 
-	<ThingDef Name="BaseImpGrenade" ParentName="BaseBullet" Abstract="true">
+	<ThingDef Class="CombatExtended.AmmoDef" Name="BaseImpGrenade" ParentName="BaseBullet" Abstract="true">
 		<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
 		<graphicData>
 			<texPath>Things/IGCore/Projectile/GrenadaProjectile</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>TransparentPostLight</shaderType>
 		</graphicData>
-		<projectile>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
 			<speed>35</speed>
 			<flyOverhead>false</flyOverhead>
 		</projectile>
 	</ThingDef>
 
-	<ThingDef ParentName="BaseImpGrenade">
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="BaseImpGrenade">
 		<defName>Bullet_ImpGrenade</defName>
 		<label>Imperial grenade</label>
-		<projectile>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
 			<explosionRadius>3.0</explosionRadius>
 			<damageDef>Flame</damageDef>
 			<damageAmountBase>20</damageAmountBase>

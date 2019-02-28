@@ -20,7 +20,7 @@
 	
 	<!-- ==================== Ammo ========================== -->
 
-  <ThingDef Name="BoltGunBase" ParentName="AmmoBase" Abstract="True">
+  <ThingDef Class="CombatExtended.AmmoDef" Name="BoltGunBase" ParentName="AmmoBase" Abstract="True">
     <description>BoltGun ammo</description>
     <statBases>
 	  <Mass>0.01</Mass>
@@ -35,7 +35,7 @@
     </thingCategories>
   </ThingDef>
 
-  <ThingDef ParentName="BoltGunBase">
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="BoltGunBase">
     <defName>Ammo_BoltGun</defName>
     <label>BoltGun cartridge</label>
     <graphicData>
@@ -50,7 +50,7 @@
 	
 	<!-- ================== Projectiles ================== -->
 
-  <ThingDef Name="BaseBoltGun" ParentName="BaseBullet" Abstract="true">
+  <ThingDef Class="CombatExtended.AmmoDef" Name="BaseBoltGun" ParentName="BaseBullet" Abstract="true">
     <graphicData>
       <texPath>Things/IGCore/Projectile/BoltProjectileMk1-MED</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -61,11 +61,11 @@
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseBoltGun">
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="BaseBoltGun">
     <defName>Bullet_BoltGun</defName>
     <label>BoltGun bullet</label>
 	<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
-    <projectile>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageAmountBase>30</damageAmountBase>
       <armorPenetration>0.75</armorPenetration>
 	  <explosionRadius>1.01</explosionRadius>

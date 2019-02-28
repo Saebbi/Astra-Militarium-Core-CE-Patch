@@ -9,7 +9,7 @@
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>TransparentPostLight</shaderType>
 		</graphicData>
-		<projectile>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
 			<damageDef>IGBomb</damageDef>
 			<damageAmountBase>80</damageAmountBase>
 			<armorPenetration>2.0</armorPenetration>

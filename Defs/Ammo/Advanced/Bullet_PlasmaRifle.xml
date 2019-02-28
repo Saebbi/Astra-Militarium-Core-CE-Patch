@@ -20,7 +20,7 @@
 	
 	<!-- ==================== Ammo ========================== -->
 
-  <ThingDef Name="PlasmaRifleBase" ParentName="AmmoBase" Abstract="True">
+  <ThingDef Class="CombatExtended.AmmoDef" Name="PlasmaRifleBase" ParentName="AmmoBase" Abstract="True">
     <description>Plasma Rifle ammo</description>
     <statBases>
 	  <Mass>0.01</Mass>
@@ -35,7 +35,7 @@
     </thingCategories>
   </ThingDef>
 
-  <ThingDef ParentName="PlasmaRifleBase">
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="PlasmaRifleBase">
     <defName>Ammo_PlasmaRifle</defName>
     <label>Plasma Rifle cartridge</label>
     <graphicData>
@@ -50,22 +50,22 @@
 	
 	<!-- ================== Projectiles ================== -->
 
-  <ThingDef Name="BasePlasmaRifle" ParentName="BaseBullet" Abstract="true">
+  <ThingDef Class="CombatExtended.AmmoDef" Name="BasePlasmaRifle" ParentName="BaseBullet" Abstract="true">
 	<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
     <graphicData>
       <texPath>Things/IGCore/Projectile/QXIGPlasShotLrg</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <projectile>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageDef>IGBomb</damageDef>
       <speed>100</speed>
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BasePlasmaRifle">
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="BasePlasmaRifle">
     <defName>Bullet_PlasmaRifle</defName>
     <label>Plasma shot</label>
-    <projectile>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageAmountBase>100</damageAmountBase>
       <armorPenetration>1.5</armorPenetration>
 	  <explosionRadius>1.70</explosionRadius>

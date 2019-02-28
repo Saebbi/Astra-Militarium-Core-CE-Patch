@@ -20,7 +20,7 @@
 	
 	<!-- ==================== Ammo ========================== -->
 
-  <ThingDef Name="AutoGunBase" ParentName="AmmoBase" Abstract="True">
+  <ThingDef Class="CombatExtended.AmmoDef" Name="AutoGunBase" ParentName="AmmoBase" Abstract="True">
     <description>AutoGun ammo</description>
     <statBases>
 	  <Mass>0.01</Mass>
@@ -35,7 +35,7 @@
     </thingCategories>
   </ThingDef>
 
-  <ThingDef ParentName="AutoGunBase">
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="AutoGunBase">
     <defName>Ammo_AutoGun</defName>
     <label>AutoGun cartridge</label>
     <graphicData>
@@ -50,21 +50,21 @@
 	
 	<!-- ================== Projectiles ================== -->
 
-  <ThingDef Name="BaseAutoGun" ParentName="BaseBullet" Abstract="true">
+  <ThingDef Class="CombatExtended.AmmoDef" Name="BaseAutoGun" ParentName="BaseBullet" Abstract="true">
     <graphicData>
       <texPath>Things/Projectile/Bullet_Small</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <projectile>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageDef>IGBullet</damageDef>
       <speed>125</speed>
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseAutoGun">
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="BaseAutoGun">
     <defName>Bullet_AutoGun</defName>
     <label>AutoGun bullet</label>
-    <projectile>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageAmountBase>8</damageAmountBase>
       <armorPenetration>0.55</armorPenetration>
     </projectile>

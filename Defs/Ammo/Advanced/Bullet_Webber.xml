@@ -20,7 +20,7 @@
 	
 	<!-- ==================== Ammo ========================== -->
 
-  <ThingDef Name="WebberBase" ParentName="AmmoBase" Abstract="True">
+  <ThingDef Class="CombatExtended.AmmoDef" Name="WebberBase" ParentName="AmmoBase" Abstract="True">
     <description>Webber ammo</description>
     <statBases>
 	  <Mass>0.01</Mass>
@@ -35,7 +35,7 @@
     </thingCategories>
   </ThingDef>
 
-  <ThingDef ParentName="WebberBase">
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="WebberBase">
     <defName>Ammo_Webber</defName>
     <label>Webber cartridge</label>
     <graphicData>
@@ -50,22 +50,22 @@
 	
 	<!-- ================== Projectiles ================== -->
 
-  <ThingDef Name="WebberGun" ParentName="BaseBullet" Abstract="true">
+  <ThingDef Class="CombatExtended.AmmoDef" Name="WebberGun" ParentName="BaseBullet" Abstract="true">
     <graphicData>
       <texPath>Things/IGCore/Projectile/WebProjectile</texPath>
       <graphicClass>Graphic_Single</graphicClass>
 	  <shaderType>TransparentPostLight</shaderType>
     </graphicData>
-    <projectile>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageDef>IGWebbed</damageDef>
       <speed>50</speed>
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseBullet">
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="BaseBullet">
     <defName>Bullet_Webber</defName>
     <label>Webber net</label>
-    <projectile>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageAmountBase>10</damageAmountBase>
 	  <explosionRadius>0.01</explosionRadius>
 	  <flyOverhead>true</flyOverhead>
